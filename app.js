@@ -113,31 +113,122 @@
     console.log(val.length)
     */
 
-// to number conversion 
+    /*
+    // to number conversion 
 
-let val;
-val = Number(null);
-val = Number(false);
-val = Number({a:1});
-val = Number('prajwal')
-val = Number('45')
+    let val;
+    val = Number(null);
+    val = Number(false);
+    val = Number({a:1});
+    val = Number('prajwal')
+    val = Number('45')
 
-val = parseInt((100.67))
-val = parseFloat(100.67)
-
-
-console.log(val)
-console.log(typeof val)
-console.log(val.toFixed(3))
-
-// type cohersion (JS handles it itself)
-
-val1 = 'praj'
-val2 = 6
-add = val1 + val2;
-console.log(add)
+    val = parseInt((100.67))
+    val = parseFloat(100.67)
 
 
+    console.log(val)
+    console.log(typeof val)
+    console.log(val.toFixed(3))
+
+    // type cohersion (JS handles it itself)
+
+    val1 = 'praj'
+    val2 = 6
+    add = val1 + val2;
+    console.log(add)
+    /*
+
+    */
+
+// MATH Ops
+    /*
+    const num1 = 53;
+    const num2 = 42;
+
+    let val;
+    val = Math.PI
+    val = Math.E
+    val = Math.pow(5,3)
+    val = Math.round(4.4)
+    val = Math.ceil(4.2)
+    val = Math.floor(4.9)
+    val = Math.sqrt(4)
+    val = Math.round((Math.random()*30 +1))
+    console.log(val);
+    
+
+    // escaping
+    let val = ' thats\'s a good book '
+    val = 'it\'s a nice character'
+    console.log(val)
+
+*/
+
+// Template literals 
+
+    /*const name = "Prajwal"
+    const age = 20
+    const city = "Bangalore"
+
+    function hello(){return "Hello world"}
+
+    // Templates(like templates) start with `` and spots are filled with ${} with conditionls and functions also(ES6)
+    let val = `
+    <ul>
+    <li>Name: ${name}</li>
+    <li>Age: ${age}</li>
+    <li>City: ${city}</li>
+    <li>${hello()}</li>
+    <li>${(age > 18) ? true : false}</li>
+    </ul>
+    `
+    document.body.innerHTML = val
+    console.log(val)
+    */
+
+// Arrays
+        /*const numbers = new Array(2,5,1,6,7,10);
+        numbers.shift()
+        numbers.unshift(4)
+        numbers.pop()
+        numbers.push(5,4)
+
+        // ascending sort
+        numbers.sort((x,y)=> x-y)
+
+        // descending sort
+        numbers.sort((x,y)=> y-x)
+
+        function isUpper(x){
+            return x>5
+        }
+        // find
+        numbers.find(isUpper)
+
+        console.log(numbers);*/
 
 
+    // Object literals
 
+    const person = {
+        firstName: "Prajwal",
+        lastName : "M",
+        age: 21,
+        address: {
+            city : "Bengaluru",
+            state: "KA"
+        },
+        hobbies: ["books","television"],
+        getBirthYear: function(){
+          return 2018 - this.age;
+        }
+    }
+
+    val = person;
+    val = person["firstName"]
+    val = person.age
+    val = person.address.city
+    val = person.hobbies[1]
+    val = person.getBirthYear()
+    console.log(val);
