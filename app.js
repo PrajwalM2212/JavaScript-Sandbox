@@ -209,26 +209,114 @@
         console.log(numbers);*/
 
 
-    // Object literals
+ // Object literals
 
-    const person = {
-        firstName: "Prajwal",
-        lastName : "M",
-        age: 21,
-        address: {
-            city : "Bengaluru",
-            state: "KA"
-        },
-        hobbies: ["books","television"],
-        getBirthYear: function(){
-          return 2018 - this.age;
+       /* const person = {
+            firstName: "Prajwal",
+            lastName : "M",
+            age: 20,
+            address: {
+                city : "Bengaluru",
+                state: "KA"
+            },
+            hobbies: ["books","television"],
+            getBirthYear: function(){
+            return 2018 - this.age;
+            }
         }
+
+        val = person;
+        val = person["firstName"]
+        val = person.age
+        val = person.address.city
+        val = person.hobbies[1]
+        val = person.getBirthYear()
+        console.log(val);*/
+
+// DATE
+
+   /* let today = new Date();
+    let val = today.getDay();
+    val = today.getMonth();
+    val = today.getFullYear();
+    val = today.getSeconds();
+    val = today.getHours();
+    val = today.getMinutes();
+
+    today.setFullYear(2008)
+    // month/date/year hh:mm:ss format
+    today = new Date('12/22/1997 12:12:12')
+    today = new Date('December 22 1997 12:12:12')
+    today = new Date('12-22-1997 12:12:12')
+    today = new Date('Dec 22 1997 12:12:12')
+
+    console.log(today)*/
+
+// Conditionals 
+
+    /*let val = 100;
+
+    // check after type conversion
+    if(val == '100'){
+        console.log(true);
+    }else{
+        console.log(false);
     }
 
-    val = person;
-    val = person["firstName"]
-    val = person.age
-    val = person.address.city
-    val = person.hobbies[1]
-    val = person.getBirthYear()
-    console.log(val);
+    // check wihout type conversion
+    if(val === '100'){
+        console.log(true);
+    }else{
+        console.log(false);
+    }*/
+
+    // checking for null cases as in java but ==null may also suffice
+    /*
+    let val1;
+    if(typeof val1 ===  'undefined'){
+        console.log(true); 
+    }else{
+        console.log(false);
+    }
+
+
+    // ternary
+    let val =100;
+    console.log((val == 100)?'Correct':'Incorrect');
+
+    */
+
+// Functions and expressions
+function compare( x ,  y){
+   return (x>y?x:y);
+}
+console.log(compare(4,7));
+
+// expressions
+let compare2 = function(x,y){
+   return (x>y?x:y);
+};
+console.log(compare2(4,8));
+
+// immediatly invocable functions
+(function(firstName,lastName){
+    console.log(`${firstName} ${lastName}`);
+})("Prajwal","M");
+
+// validations in functions by setting defaults
+(function(firstName = "Prajwal",lastName="M"){
+    console.log(`${firstName} ${lastName}`);
+})("Sophie","Dog");
+
+// when function is inside a object it is called a method
+
+const computer = {
+    size: function(x,y,z){
+        return x*y*z;
+    }
+};
+computer.speed = function(x){
+    return x;
+}
+console.log(computer.size(2,3,4));
+console.log(computer.speed(4));
