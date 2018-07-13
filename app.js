@@ -286,37 +286,78 @@
 
     */
 
+
 // Functions and expressions
-function compare( x ,  y){
-   return (x>y?x:y);
-}
-console.log(compare(4,7));
-
-// expressions
-let compare2 = function(x,y){
-   return (x>y?x:y);
-};
-console.log(compare2(4,8));
-
-// immediatly invocable functions
-(function(firstName,lastName){
-    console.log(`${firstName} ${lastName}`);
-})("Prajwal","M");
-
-// validations in functions by setting defaults
-(function(firstName = "Prajwal",lastName="M"){
-    console.log(`${firstName} ${lastName}`);
-})("Sophie","Dog");
-
-// when function is inside a object it is called a method
-
-const computer = {
-    size: function(x,y,z){
-        return x*y*z;
+/*
+    function compare( x ,  y){
+    return (x>y?x:y);
     }
-};
-computer.speed = function(x){
-    return x;
+    console.log(compare(4,7));
+
+    // expressions / anonymous functions
+    let compare2 = function(x,y){
+    return (x>y?x:y);
+    };
+    console.log(compare2(4,8));
+
+    // immediatly invocable functions
+    (function(firstName,lastName){
+        console.log(`${firstName} ${lastName}`);
+    })("Prajwal","M");
+
+    // validations in functions by setting defaults
+    (function(firstName = "Prajwal",lastName="M"){
+        console.log(`${firstName} ${lastName}`);
+    })("Sophie","Dog");
+
+    // when function is inside a object it is called a method
+
+    const computer = {
+        size: function(x,y,z){
+            return x*y*z;
+        }
+    };
+    computer.speed = function(x){
+        return x;
+    }
+    console.log(computer.size(2,3,4));
+    console.log(computer.speed(4));
+*/
+
+// Loops 
+    /*
+    const computers = ['apple','dell','acer','microsoft','chrome']
+
+    // forEach loop takes anonymous function with iterator,index,array
+    computers.forEach(function(car,index,computers){
+        console.log(`${index}: ${car}`);
+        console.log(computers)
+    });
+
+    // for in loop
+    for(computer in computers){
+        console.log(`${computer}: ${computers[computer]}`)
+    }
+    */
+
+// Window object is the source of all 
+//console.log(window.history)
+
+// let , var ,const 
+
+// let and const behave normally as in other languages but var changes when in block
+let a = 10;
+var  b = 4;
+const c = 8;
+
+
+{
+    var b = 9;
+    let a = 2;
+    const c = 8;
+    console.log(a,b,c);
+
 }
-console.log(computer.size(2,3,4));
-console.log(computer.speed(4));
+
+console.log(a,b,c);
+
