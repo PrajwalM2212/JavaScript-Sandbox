@@ -68,13 +68,13 @@ e.style.color = "red";
     console.log(val.previousElementSibling);
 
 */
-    // we also have  lastChild , lastElementChild, firstChild, firstElementChild
-    // element.childElementCount
-    // element.parentNode , element.parentElement
-    // element.nextSibling, element.nextElementSibling
-    // element.previousSibling, element.previousElementSibling
-    // all methods can be chained to traverse
-    // textContent, innnerHTML,innerText,children,childNodes
+// we also have  lastChild , lastElementChild, firstChild, firstElementChild
+// element.childElementCount
+// element.parentNode , element.parentElement
+// element.nextSibling, element.nextElementSibling
+// element.previousSibling, element.previousElementSibling
+// all methods can be chained to traverse
+// textContent, innnerHTML,innerText,children,childNodes
 
 
 // Creating Elements
@@ -104,12 +104,52 @@ e.style.color = "red";
 
 // REPLACING ELEMENTS
 
+/*
+    const oldListItem = document.getElementById('li');
+    const newListItem = document.createElement("li");
+    newListItem.id = "li";
+    newListItem.appendChild(document.createTextNode("New Chocolate"));
+    // get parent
+    const parent = oldListItem.parentElement;
+    // replace the child of the parent
+    parent.replaceChild(newListItem,oldListItem);
+*/
 
-const oldListItem = document.getElementById('li');
-const newListItem = document.createElement("li");
-newListItem.id = "li";
-newListItem.appendChild(document.createTextNode("New Chocolate"));
-// get parent
-const parent = oldListItem.parentElement;
-// replace the child of the parent
-parent.replaceChild(newListItem,oldListItem);
+// REMOVE ELEMENTS
+
+/*
+    const list = document.querySelectorAll("ul");
+    const listItems = document.querySelectorAll("li");
+
+    // remove elements directly by using the remove() function
+    listItems[0].remove();
+    // remove elements by calling removeChild()
+    list[0].removeChild(listItems[1]);
+    */
+
+// Classes and Attributes
+/*
+    const list = document.querySelector("li");
+    // set/create an attribute
+    list.setAttribute("title","link")
+    // remove an attribute
+    list.children[0].removeAttribute("href");
+    // check if attribute exists
+    console.log(list.hasAttribute("title"));
+
+
+    const ul = document.querySelector("ul");
+    // add class using class list
+    ul.classList.add("text");
+    // remove class using class list
+    ul.classList.remove("l");
+    console.log(ul.className);
+    */
+
+// Event Listeners and event object 
+
+const li = document.querySelector("li");
+li.addEventListener("click", function (e) {
+    e.target.classList.add("event")
+    console.log(e.target);
+})
