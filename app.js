@@ -147,9 +147,97 @@ e.style.color = "red";
     */
 
 // Event Listeners and event object 
+// One can add event listeners by using addEventListener() method
+   /* const li = document.querySelector("li");
+    li.addEventListener("click", function (e) {
+        e.target.classList.add("event")
+        console.log(e.target);
+    })*/
 
-const li = document.querySelector("li");
-li.addEventListener("click", function (e) {
-    e.target.classList.add("event")
-    console.log(e.target);
-})
+
+// MOUSE EVENTS 
+
+  /*
+    const body = document.querySelector("body");
+    const para = document.querySelector("p");
+
+    // mouse event function
+    function eventRun(e){
+        console.log(e.clientX);
+        console.log(event.type);
+        body.style.color = `rgb(${e.offsetX},${e.offsetY},70)`;
+    }
+    */
+
+    // click event 
+    //body.addEventListener("click",eventRun);
+
+    // double click event
+    //body.addEventListener("dblclick",eventRun);
+
+    // mouse-up - after leaving the mouse-down
+    //body.addEventListener("mouseup",eventRun);
+
+    // mouse-down
+    //body.addEventListener("mousedown",eventRun);
+
+    // mouse-enter
+    //para.addEventListener("mouseenter",eventRun);
+
+    //mouse-leave
+    //para.addEventListener("mouseleave",eventRun);
+
+    //mouse-over
+    //para.addEventListener("mouseover",eventRun);
+
+    //mouse-out
+    //para.addEventListener("mouseout",eventRun)
+
+    // mouse-move
+    //body.addEventListener("mousemove",eventRun);
+
+
+
+// INPUT and KEY-EVENTS
+
+    //const input = document.querySelector("input");
+    //keydown
+    //input.addEventListener("keydown",eventRun);
+
+    //keyup
+    //input.addEventListener("keyup",eventRun);
+
+    //keypress
+    //input.addEventListener("keypress",eventRun);
+
+    //focus 
+    //input.addEventListener("focus",eventRun);
+
+    //blur
+    //input.addEventListener("blur",eventRun);
+
+    //cut 
+    //input.addEventListener("cut",eventRun);
+
+    //paste
+    //input.addEventListener("paste",eventRun);
+
+    //copy
+    //input.addEventListener("copy",eventRun);
+
+    //select 
+    //input.addEventListener("select",eventRun);
+
+    //input
+    //input.addEventListener("input",eventRun);
+
+    //change -- on select list
+
+    //const select = document.querySelector("select");
+    //select.addEventListener("change",eventRun);
+
+
+    //function eventRun(e){
+    //    console.log(e.type);
+    //    console.log(e.target.value);
+    //}
