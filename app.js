@@ -6,34 +6,34 @@ Object oriented representation
 */
 
 // getElementById() method takes id has input
-/*
-para = document.getElementById('paragraph');
-para.innerText = "Wow java"
-para.textContent = "Wow javaScript"
-para.style.color = "green"
-listItem = document.getElementById("list");
-listItem.style.color = 'gray'
-*/
+    /*
+    para = document.getElementById('paragraph');
+    para.innerText = "Wow java"
+    para.textContent = "Wow javaScript"
+    para.style.color = "green"
+    listItem = document.getElementById("list");
+    listItem.style.color = 'gray'
+    */
 
-// querySelector() method takes element as input 
-/*
-listItem = document.querySelector('li:last-child');
-listItem.style.color = 'gray';
-unorderedList = document.querySelector('ul');
-unorderedList.style.color = "green";
-console.log(unorderedList);
+    // querySelector() method takes element as input 
+    /*
+    listItem = document.querySelector('li:last-child');
+    listItem.style.color = 'gray';
+    unorderedList = document.querySelector('ul');
+    unorderedList.style.color = "green";
+    console.log(unorderedList);
 
 
-// document.getElementsByClassName()
-// document.get
+    // document.getElementsByClassName()
+    // document.get
 
-// querySelectorAll()
-/*const list = document.querySelectorAll("div.a  li#li ,  div.a li#l");
-console.log(list)
-arr = Array.from(list);
-arr.forEach(function(e){
-e.style.color = "red";
-});*/
+    // querySelectorAll()
+    /*const list = document.querySelectorAll("div.a  li#li ,  div.a li#l");
+    console.log(list)
+    arr = Array.from(list);
+    arr.forEach(function(e){
+    e.style.color = "red";
+    });*/
 
 
 
@@ -241,3 +241,60 @@ e.style.color = "red";
     //    console.log(e.type);
     //    console.log(e.target.value);
     //}
+
+
+// EVENT BUBBLING
+/*
+    function runEvent(e){
+        console.log(e.target);
+    }
+
+    const ulElement = document.querySelector("div ul");
+    ulElement.addEventListener("click",runEvent);
+    //console.log(ulElement);
+    ulElement.parentElement.parentElement.addEventListener("click",function(e){
+        console.log("funny");
+    });
+    */
+
+// EVENT DELEGATION
+
+/*
+    const body = document.querySelector("body");
+    body.addEventListener("click",function(e){
+        if(body.firstElementChild.classList.contains("head1")){
+        console.log("div found");
+        }
+    });
+    console.log(body.firstElementChild.classList[1]);
+*/
+
+// Local Storage and session storage
+/*
+localStorage.setItem("name","prajwal");
+localStorage.removeItem("name");
+console.log(localStorage.getItem("name"));
+
+
+sessionStorage.setItem("age",20);
+console.log(sessionStorage.getItem("age"));
+sessionStorage.clear();
+*/
+
+// local storage and seesion storage can store only strings,
+// so we have use JSON.stringify to store and JSON.parse to retrieve
+/*
+const values = [];
+const input = document.querySelector("input");
+input.addEventListener("blur",function(e){
+
+    values.push(input.value);
+    localStorage.setItem("tasks",JSON.stringify(values));
+
+});
+*/
+
+values = JSON.parse(localStorage.getItem("tasks"));
+values.forEach(function(item){
+    console.log(item);
+});
