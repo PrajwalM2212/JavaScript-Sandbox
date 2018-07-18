@@ -17,7 +17,6 @@ const newPerson = new Object();
 newPerson.name = "Prajwal";
 newPerson.age = 20;
 newPerson.getDOB = new Function("return 2017 - this.age");
-console.log(newPerson.getDOB());
 
 // But if we need more instances of the same object we use constructors
 
@@ -30,7 +29,7 @@ function Person(firstName, lastName, age) {
     }
 }
 
-const personFromConstructor = new Person("Prajwal","M",20);
+const personFromConstructor = new Person("Prajwal", "M", 20);
 
 
 // Built in constructors
@@ -44,14 +43,64 @@ const arr = new Array(2, 3, 4);
 // It is a good practice to put methods into prototypes of the object
 
 // a general method 
-Person.prototype.getFullName = function(){
+Person.prototype.getFullName = function () {
     return `${this.firstName} ${this.lastName}`;
 }
 
 // We can create methods to alter data as well
-Person.prototype.getsMarried = function(lastName){
+Person.prototype.getsMarried = function (lastName) {
     this.lastName = lastName;
 }
 
 personFromConstructor.getsMarried("Haa");
-console.log(personFromConstructor.toString());
+
+
+
+//Inheritence using prototypes. All custom defined objects inherit from base Object. 
+
+//lets create a hero constructor for our game
+function Hero(name, health) {
+    this.name = name;
+    this.health = health;
+    this.showHealth = new Function("return this.health");
+}
+
+Hero.prototype.introduce = function () {
+    return `Hi, I am ${this.name} and have ${this.health} health points`;
+}
+
+// Now our warrior constructor has some properties common to hero so we use Hero.call() method
+
+function Warrior(name, health, anger) {
+    Hero.call(this, name, health);
+    this.anger = anger;
+}
+
+Warrior.prototype.showAnger = function () {
+    return `My anger is ${this.anger}`;
+}
+
+// we can call Hero methods if it were not prototype as we use Hero.call()
+new Warrior("Prajwal", 100, 50).showHealth();
+
+//Now our healer constructor has some properties common to hero so we use Hero.call() method
+
+function Healer(name, health, calm) {
+    Hero.call(this, name, health);
+    this.calm = calm;
+}
+new Healer("Prajwal", 100, 50);
+
+
+// Now we can set the prototype methods of Hero to both Warrior and Healer using Object.create() method
+// This inherits the methods of Hero as well as seen in the __proto__ property
+
+Healer.prototype = Object.create(Hero.prototype);
+Warrior.prototype = Object.create(Hero.prototype);
+
+// the constructor is missing 
+
+Healer.prototype.constructor = Healer;
+Warrior.prototype.constructor = Warrior;
+
+console.log(new Healer("Prajwal", 100, 50).introduce());
