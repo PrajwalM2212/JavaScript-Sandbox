@@ -103,4 +103,37 @@ Warrior.prototype = Object.create(Hero.prototype);
 Healer.prototype.constructor = Healer;
 Warrior.prototype.constructor = Warrior;
 
-console.log(new Healer("Prajwal", 100, 50).introduce());
+// we can also override the parent methods 
+Healer.prototype.introduce = function () {
+    return `Hi, I am ${this.name} and have ${this.calm} calm points`;
+}
+
+new Healer("Prajwal", 100, 50).introduce();
+
+
+// Object.create()
+// This gives another way of creating objects 
+
+// We can define all functions in a object
+const customerPrototype = {
+    greeting: function () {
+        return `Welcome ${this.name}`;
+    },
+
+    showMembership: function () {
+        return `You have a ${this.membership} memebership`;
+    }
+}
+
+// Then create the object 
+const customer = Object.create(customerPrototype);
+customer.name = "Prajwal";
+customer.membership = "Premium";
+
+// Alternatively define all properties in the object.create() itself by creating a properties object;
+const customer1 = Object.create(customerPrototype, {
+    name: { value: "Prajwal" },
+    membership: { value: "Premimum" }
+}
+)
+console.log(customer1);
