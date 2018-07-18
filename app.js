@@ -136,4 +136,58 @@ const customer1 = Object.create(customerPrototype, {
     membership: { value: "Premimum" }
 }
 )
-console.log(customer1);
+customer1;
+
+
+// ES6 classes and subclasses
+
+// ES6 classes are only syntatic sugar and the underlying mechanism is still the same with properties and prototypes
+// lets create a class Animal
+
+// class is declared with keyword "class"
+class Animal {
+
+    // constructor is defined with function "constructor()" to create object properties
+    constructor(animalType, name, age) {
+        this.animalType = animalType;
+        this.name = name;
+        this.age = age;
+    }
+
+    //define methods which will automatically be entered into the prototype
+
+    greeting() {
+        return `Welcome ${this.name} from ${this.animalType}`;
+    }
+
+    getYOB() {
+        return 1997 - age;
+    }
+
+    // we also have static methods which do not use "this" members and can be accessed uninstaniated. We need
+    // to use static keywords
+
+    static add(x, y) {
+        return x + y;
+    }
+
+}
+
+console.log(Animal.add(3, 2));
+
+// subclass can be created using the extends keyword
+// Dog inherits animal
+
+class Dog extends Animal {
+    constructor(animalType, name, age, price, size) {
+        //we call super instead of Animal.call() as before
+        super(animalType, name, age);
+        this.price = price;
+        this.size = size;
+    }
+
+    getPrice(){
+        return `${this.price} rupees`;
+    }
+}
+console.log(new Dog("bird","shruti",3,1500,10));
