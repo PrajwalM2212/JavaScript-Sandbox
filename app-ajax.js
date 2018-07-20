@@ -51,3 +51,12 @@ function getText(e) {
 
     xhr.send();
 }
+
+/*
+AJAX => XMLHttpRequest()
+
+xhr.open("GET","*.txt",true);
+xhr.onload = f
+xhr.send();
+xhr.onreadystatechange
+*/
