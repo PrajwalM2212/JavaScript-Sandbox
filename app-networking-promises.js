@@ -8,14 +8,6 @@ const posts = [{
 }];
 
 
-function createPost(post) {
-    setTimeout(function () {
-        posts.push(post);
-    }, 3000);
-
-}
-
-
 function getPosts() {
 
     setTimeout(function (output = '') {
@@ -27,35 +19,37 @@ function getPosts() {
 
 }
 
-
-
-// Uncomment getPosts and comment out the below section and run it.
-// Later comment it again and uncomment the below section. 
-//     createPost({
-//        name: 'Three',
-//        age: 30
-//     });
-// getPosts();
-
-
-
-// This will display only the first two posts and can be fixed 
-// with callbacks
-
-
+// Promises can be used instead of callbacks . 
+// They have a usual syntax of 
+// return new Promise(function(resolve,reject){   
+//      if(successfull){
+//       resolve(data);
+//      }else{
+//         reject(data)
+//      }
+//  }
+// });
 function createPostAsync(post) {
-    return new Promise(function(resolve,reject){
+    return new Promise(function (resolve, reject) {
         setTimeout(function () {
             posts.push(post);
-            resolve();    
+            resolve();
         }, 3000);
     });
 }
 
+
+// then() to handle a fulfilled promise and reject to 
+// handle a error we use a catch(). The catch says if any
+// of the then()'s went wrong.
 createPostAsync({
     name: 'Three',
     age: 30
-}, getPosts).then(getPosts);
+}, getPosts)
+    .then(getPosts)
+    .catch(function (err) {
+        console.log(err);
+    });
 
 
 

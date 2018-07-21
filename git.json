@@ -1,0 +1,103 @@
+{
+    "itemCount": 10,
+    "sections": [
+        {
+            "name": "Prepare Repository",
+            "description": "Set up the repository to work",
+            "commands": [
+                {
+                    "title": "View version",
+                    "command": "git --version",
+                    "subTitle": "Prints the git version"
+                },
+                {
+                    "title": "Get help",
+                    "command": "git --help",
+                    "subTitle": "Prints synopsis and list of most commonly used commands"
+                },
+                {
+                    "title": "Initialize Repository",
+                    "command": "git init",
+                    "subTitle": "Create a new empty repository in current directory"
+                },
+                {
+                    "title": "Clone a Repository",
+                    "command": "git clone <url> <dir>",
+                    "subTitle": "Clone the repository at the url"
+                }
+            ]
+        },
+        {
+            "name": "Configure",
+            "description": "Configure git with your name and e-mail address",
+            "commands": [
+                {
+                    "title": "List all Configurations",
+                    "command": "git config --list",
+                    "subTitle": "Prints all current configurations"
+                },
+                {
+                    "title": "Set User Name",
+                    "command": "git config user.name <'name'>",
+                    "subTitle": "Set the commiters user name"
+                },
+                {
+                    "title": "Set User Email",
+                    "command": "git config user.email <'email'>",
+                    "subTitle": "Set the commiters e-mail address"
+                },
+                {
+                    "title": "Get Configuration",
+                    "command": "git config --get <config-name>",
+                    "subTitle": "Get configuration value for the current name"
+                },
+                {
+                    "title": "Unset Configuration",
+                    "command": "git config --unset <config-name>",
+                    "subTitle": "Unset configuration value for the current name"
+                },
+                {
+                    "title": "Change Editor",
+                    "command": "git config core.editor <editor>",
+                    "subTitle": "Change editor used for writing commit messages"
+                }
+            ]
+        },
+        {
+            "name": "Working with the Repository",
+            "description": "Commiting your changes",
+            "commands": [
+                {
+                    "title": "Print Status",
+                    "command": "git status",
+                    "subTitle": "Prints the status of the working directory, showing changed files"
+                },
+                {
+                    "title": "Add file to index",
+                    "command": "git add <file>",
+                    "subTitle": "Adds file or directory to the index to be included in the next commit"
+                },
+                {
+                    "title": "Remove file from Index",
+                    "command": "git reset --<file>",
+                    "subTitle": "Removes current file or directory from index"
+                },
+                {
+                    "title": "Discard Changes",
+                    "command": "git checkout --<file>",
+                    "subTitle": "Discards all changes made to the file"
+                },
+                {
+                    "title": "Remove File",
+                    "command": "git rm <file>",
+                    "subTitle": "Deletes file from the working directory"
+                },
+                {
+                    "title": "Commit Changes",
+                    "command": "git commit -m['message']",
+                    "subTitle": "Commits the changes made with the message"
+                }
+            ]
+        }
+    ]
+}
