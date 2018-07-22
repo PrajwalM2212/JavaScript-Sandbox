@@ -57,13 +57,10 @@ function getApi(e) {
             return res.json();
         })
         .then(function (json) {
-           /* out = ``;
+            out = ``;
             json.forEach(item => out += `${item.login} <br>`);
-            output.innerHTML = out;*/
+            output.innerHTML = out;
             return json[0].login;
-        })
-        .then(function(item){
-            output.innerHTML = item;
         })
         .catch(err => console.log(err))
 }

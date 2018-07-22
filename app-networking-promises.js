@@ -25,10 +25,11 @@ function getPosts() {
 //      if(successfull){
 //       resolve(data);
 //      }else{
-//         reject(data)
+//         reject(err)
 //      }
 //  }
 // });
+// when used resolve(data) , the function returns data and when used reject(err), the function return error 
 function createPostAsync(post) {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
